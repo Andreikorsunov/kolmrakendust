@@ -85,7 +85,6 @@ namespace kolmerakendust
                 Dock = System.Windows.Forms.DockStyle.Fill,
                 TabIndex = 0,
                 TabStop = false,
-                AutoSize = true,
             };
 
             cb = new CheckBox
