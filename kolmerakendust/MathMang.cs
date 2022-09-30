@@ -17,11 +17,11 @@ namespace kolmerakendust
             {
                 Dock = DockStyle.Fill,
                 ColumnStyles =
-                {new ColumnStyle(SizeType.Percent, 15),
-                    new ColumnStyle(SizeType.Percent, 15),
-                new ColumnStyle(SizeType.Percent, 15),
-                new ColumnStyle(SizeType.Percent, 15),
-                new ColumnStyle(SizeType.Percent, 15)},
+                {new ColumnStyle(SizeType.Percent, 20),
+                    new ColumnStyle(SizeType.Percent, 20),
+                    new ColumnStyle(SizeType.Percent, 20),
+                    new ColumnStyle(SizeType.Percent, 20),
+                    new ColumnStyle(SizeType.Percent, 20)},
                 RowStyles = { new RowStyle(SizeType.Percent, 21),
                     new RowStyle(SizeType.Percent, 21),
                     new RowStyle(SizeType.Percent, 21),
