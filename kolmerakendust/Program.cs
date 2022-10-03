@@ -16,7 +16,7 @@ namespace kolmerakendust
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MathMang());
+            Application.Run(new Matching());
         }
     }
 }

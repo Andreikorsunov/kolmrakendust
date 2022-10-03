@@ -9,7 +9,7 @@ namespace kolmerakendust
         Random rnd = new Random();
         char[] symbols = new char[] { '+', '-', '*', '/' };
         int pluss1, pluss2, miinus1, miinus2, korr1, korr2, jaga1, jaga2, aeglabi;
-        TableLayoutPanel tlp;
+        TableLayoutPanel tableLayoutPanel;
         Timer timer;
         Label lb1, lb2;
         Button alusta;
@@ -42,7 +42,7 @@ namespace kolmerakendust
             timer = new Timer();
             timer.Interval = 1000;
             timer.Tick += Timer_Tick;
-            tlp = new TableLayoutPanel
+            tableLayoutPanel = new TableLayoutPanel
             {
                 Dock = DockStyle.Fill,
                 ColumnStyles =
@@ -99,26 +99,26 @@ namespace kolmerakendust
                     Width = 100,
                     TabIndex = i + 1,
                 };
-                tlp.Controls.Add(num1, 0, i);
-                tlp.Controls.Add(mark, 1, i);
-                tlp.Controls.Add(num2, 2, i);
-                tlp.Controls.Add(vordub, 3, i);
-                tlp.Controls.Add(numeric, 4, i);
+                tableLayoutPanel.Controls.Add(num1, 0, i);
+                tableLayoutPanel.Controls.Add(mark, 1, i);
+                tableLayoutPanel.Controls.Add(num2, 2, i);
+                tableLayoutPanel.Controls.Add(vordub, 3, i);
+                tableLayoutPanel.Controls.Add(numeric, 4, i);
             }
-            tlp.Controls.Add(lb1, 3, 0);
-            tlp.SetColumnSpan(lb2, 2);
-            tlp.SetColumnSpan(lb1, 2);
-            tlp.Controls.Add(lb2, 1, 0);
-            tlp.SetColumnSpan(alusta, 2);
-            tlp.Controls.Add(alusta, 2, 5);
-            Controls.Add(tlp);
+            tableLayoutPanel.Controls.Add(lb1, 3, 0);
+            tableLayoutPanel.SetColumnSpan(lb2, 2);
+            tableLayoutPanel.SetColumnSpan(lb1, 2);
+            tableLayoutPanel.Controls.Add(lb2, 1, 0);
+            tableLayoutPanel.SetColumnSpan(alusta, 2);
+            tableLayoutPanel.Controls.Add(alusta, 2, 5);
+            Controls.Add(tableLayoutPanel);
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            NumericUpDown numeric = (NumericUpDown)tlp.GetControlFromPosition(4, 1);
-            NumericUpDown miinus = (NumericUpDown)tlp.GetControlFromPosition(4, 2);//минус
-            NumericUpDown korruta = (NumericUpDown)tlp.GetControlFromPosition(4, 3);//умножить
-            NumericUpDown jaga = (NumericUpDown)tlp.GetControlFromPosition(4, 4);//разделить
+            NumericUpDown numeric = (NumericUpDown)tableLayoutPanel.GetControlFromPosition(4, 1);
+            NumericUpDown miinus = (NumericUpDown)tableLayoutPanel.GetControlFromPosition(4, 2);//минус
+            NumericUpDown korruta = (NumericUpDown)tableLayoutPanel.GetControlFromPosition(4, 3);//умножить
+            NumericUpDown jaga = (NumericUpDown)tableLayoutPanel.GetControlFromPosition(4, 4);//разделить
             if (LabiVaatus())
             {
                 timer.Stop();
@@ -149,10 +149,10 @@ namespace kolmerakendust
         }
         private bool LabiVaatus()
         {
-            NumericUpDown numeric = (NumericUpDown)tlp.GetControlFromPosition(4, 1);
-            NumericUpDown miinus = (NumericUpDown)tlp.GetControlFromPosition(4, 2);
-            NumericUpDown korruta = (NumericUpDown)tlp.GetControlFromPosition(4, 3);
-            NumericUpDown jaga = (NumericUpDown)tlp.GetControlFromPosition(4, 4);
+            NumericUpDown numeric = (NumericUpDown)tableLayoutPanel.GetControlFromPosition(4, 1);
+            NumericUpDown miinus = (NumericUpDown)tableLayoutPanel.GetControlFromPosition(4, 2);
+            NumericUpDown korruta = (NumericUpDown)tableLayoutPanel.GetControlFromPosition(4, 3);
+            NumericUpDown jaga = (NumericUpDown)tableLayoutPanel.GetControlFromPosition(4, 4);
             if ((pluss1 + pluss2 == numeric.Value)
                 && (miinus1 - miinus2 == miinus.Value)
                 && (korr1 * korr2 == korruta.Value)
@@ -165,10 +165,10 @@ namespace kolmerakendust
         {
             for (int row = 1; row < 5; row++)
             {
-                Label num1 = (Label)tlp.GetControlFromPosition(0, row);
-                Label symbol = (Label)tlp.GetControlFromPosition(1, row);
-                Label num2 = (Label)tlp.GetControlFromPosition(2, row);
-                NumericUpDown numeric = (NumericUpDown)tlp.GetControlFromPosition(4, row);
+                Label num1 = (Label)tableLayoutPanel.GetControlFromPosition(0, row);
+                Label symbol = (Label)tableLayoutPanel.GetControlFromPosition(1, row);
+                Label num2 = (Label)tableLayoutPanel.GetControlFromPosition(2, row);
+                NumericUpDown numeric = (NumericUpDown)tableLayoutPanel.GetControlFromPosition(4, row);
                 int[] getnums = getNums(symbol.Text);
                 num1.Text = getnums[0].ToString();
                 num2.Text = getnums[1].ToString();
@@ -207,8 +207,8 @@ namespace kolmerakendust
             else if (sym == "/")
             {
                 num2 = rnd.Next(2, 11);
-                int temporaryQuotient = rnd.Next(2, 11);
-                num1 = num2 * temporaryQuotient;
+                int temp = rnd.Next(2, 11);
+                num1 = num2 * temp;
                 jaga1 = num1;
                 jaga2 = num2;
             }
