@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StartMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartMenu.Designer.cs">
+      <DependentUpon>StartMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Matching.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matching.Designer.cs">
+      <DependentUpon>Matching.cs</DependentUpon>
+    </Compile>
     <Compile Include="MathMang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +72,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="StartMenu.resx">
+      <DependentUpon>StartMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matching.resx">
+      <DependentUpon>Matching.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MathMang.resx">
       <DependentUpon>MathMang.cs</DependentUpon>
     </EmbeddedResource>
