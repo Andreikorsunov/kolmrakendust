@@ -27,6 +27,7 @@ namespace kolmerakendust
             {
                 Dock = DockStyle.Fill,
                 AutoSize = false,
+                CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset,
                 ColumnStyles =
                 {
                     new ColumnStyle(SizeType.Percent, 25),
@@ -63,7 +64,7 @@ namespace kolmerakendust
             timer = new Timer();
             timer.Interval = 750;
             timer.Tick += Timer_Click;
-            Controls.AddRange(new Control[] { tableLayoutPanel, });
+            Controls.AddRange(new Control[] { tableLayoutPanel });
             AssignIconsToSquares();
         }
         private void AssignIconsToSquares()
