@@ -1,6 +1,6 @@
 ﻿namespace kolmerakendust
 {
-    partial class LeaderBoard
+    partial class StartOfStartMenu
     {
         /// <summary>
         /// Required designer variable.

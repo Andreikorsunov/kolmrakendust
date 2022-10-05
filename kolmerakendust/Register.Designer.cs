@@ -1,6 +1,6 @@
 ﻿namespace kolmerakendust
 {
-    partial class Matching
+    partial class Register
     {
         /// <summary>
         /// Required designer variable.

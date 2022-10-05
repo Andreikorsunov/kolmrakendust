@@ -16,7 +16,7 @@ namespace kolmerakendust
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartMenu());
+            Application.Run(new StartOfStartMenu());
         }
     }
 }
