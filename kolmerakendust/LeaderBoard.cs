@@ -3,7 +3,7 @@
 namespace kolmerakendust
 {
 
-    public partial class Register : Form
+    public partial class LeaderBoard : Form
     {
         
     }
