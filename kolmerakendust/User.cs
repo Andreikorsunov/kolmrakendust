@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace kolmerakendust
 {
-    public class User
+    public class User // Класс, который хранит регистрационные данные.
     {
-        public int Id;
+        /*public List<string> Logins = new List<string>(); // Логин.
+        public List<string> Passwords = new List<string>(); // Пароль.*/
+        /*public int Id;
+        public string parol;
         public string Knimi;
         public string email;
         public string sugu;
@@ -22,6 +22,6 @@ namespace kolmerakendust
             this.email = email;
             this.sugu = sugu;
             this.vanus = vanus;
-        }
+        }*/
     }
 }

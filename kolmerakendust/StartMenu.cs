@@ -38,6 +38,24 @@ namespace kolmerakendust
             };
             Start_btn_3.Click += Start_btn_3_Click;
             this.Controls.Add(Start_btn_3);
+
+            Button leaderboard = new Button
+            {
+                Text = "Edetabel",
+                Size = new System.Drawing.Size(90, 80),
+                Location = new System.Drawing.Point(600, 80)
+            };
+            leaderboard.Click += Start_btn_4_Click;
+            this.Controls.Add(leaderboard);
+
+            Button kTeave = new Button
+            {
+                Text = "Kasutajate teave",
+                Size = new System.Drawing.Size(90, 80),
+                Location = new System.Drawing.Point(120, 80)
+            };
+            kTeave.Click += Start_btn_5_Click;
+            this.Controls.Add(kTeave);
         }
         private void Start_btn_Click(object sender, EventArgs e)
         {
@@ -52,6 +70,16 @@ namespace kolmerakendust
         private void Start_btn_3_Click(object sender, EventArgs e)
         {
             Matching vf = new Matching();
+            vf.Show();
+        }
+        private void Start_btn_4_Click(object sender, EventArgs e)
+        {
+            LeaderBoard vf = new LeaderBoard();
+            vf.Show();
+        }
+        private void Start_btn_5_Click(object sender, EventArgs e)
+        {
+            Info vf = new Info();
             vf.Show();
         }
     }
