@@ -7,6 +7,7 @@ Hetkel on kõik mängud tehtud ja töötavad korralikult, olemas on ka andmebaas
 Registreerimine koos andmete sisestamisega andmebaasi. Edetabel, kus igalt üksikult kasutajalt võetakse punkte ja selgitatakse välja, kes saavutas kõige rohkem punkte.
 ## Kuidas autoriseerimine töötab
 Sa valid seda nuppu "Logi sisse".
+
 ![изображение](https://user-images.githubusercontent.com/77333208/194776730-8000fc35-e27d-4445-9518-6873c1ad8ed6.png)
 
 
