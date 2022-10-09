@@ -10,7 +10,31 @@ Sa valid seda nuppu "Logi sisse".
 ![изображение](https://user-images.githubusercontent.com/77333208/194776730-8000fc35-e27d-4445-9518-6873c1ad8ed6.png)
 Peale klõpsamist näete akent, kus peate sisestama olemasoleva andmete nime ja parooli.
 
+
+
+
 ![изображение](https://user-images.githubusercontent.com/77333208/194776833-5befb12d-97f0-4516-8cf1-91bd2b5e4e39.png)
 Kui sisestad õiged andmed, suunatakse sind järgmisse menüüsse, kus saad juba valida ükskõik millise kolme mängu hulgast ja näha edetabelit.
 
+
+
 Kui sisestate valed andmed, st neid pole andmebaasis, siis näete teadet "Palun kontrolli sisestatud andmete õigsust!"
+
+## Kood
+```
+            SqlConnection con = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=users;Integrated Security=True;Pooling=False");
+            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From UserL Where name='" + textBox1.Text + "' and password = '" + textBox2.Text + "'", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                this.Hide();
+
+                StartMenu f2 = new StartMenu();
+                f2.Show();
+            }
+            else
+            {
+                MessageBox.Show("Palun kontrolli sisestatud andmete õigsust!");
+            }
+```
