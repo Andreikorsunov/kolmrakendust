@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data.SqlClient;
 using TextBox = System.Windows.Forms.TextBox;
 using Button = System.Windows.Forms.Button;
-using System.Runtime.CompilerServices;
 
 namespace kolmerakendust
 {

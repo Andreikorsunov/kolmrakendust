@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 using CheckBox = System.Windows.Forms.CheckBox;
 
 namespace kolmerakendust
