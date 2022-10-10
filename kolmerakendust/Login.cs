@@ -53,8 +53,8 @@ namespace kolmerakendust
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=users;Integrated Security=True;Pooling=False");
-            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From UserL Where name='" + textBox1.Text + "' and password = '" + textBox2.Text + "'", con);
+            SqlConnection con = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Using;Integrated Security=True;Pooling=False");
+            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Andmed Where nimi='" + textBox1.Text + "' and parol = '" + textBox2.Text + "'", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
