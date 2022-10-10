@@ -18,8 +18,13 @@ Peale klõpsamist näete akent, kus peate sisestama olemasoleva andmete nime ja 
 
 Kui sisestad õiged andmed, suunatakse sind järgmisse menüüsse, kus saad juba valida ükskõik millise kolme mängu hulgast ja näha edetabelit.
 
+![pilt](https://user-images.githubusercontent.com/77333208/194815935-25afbf71-cb3c-467b-9cb4-f69ea942cdb0.png)
 
-Kui sisestate valed andmed, st neid pole andmebaasis, siis näete teadet "Palun kontrolli sisestatud andmete õigsust!"
+
+Kui sisestate valed andmed, neid pole andmebaasis, siis näete teadet "Palun kontrolli sisestatud andmete õigsust!"
+
+![pilt](https://user-images.githubusercontent.com/77333208/194815908-2c183523-6264-433e-b650-e51c2bb11c9f.png)
+
 
 ## Kood
 ```
