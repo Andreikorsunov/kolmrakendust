@@ -10,6 +10,7 @@ namespace kolmerakendust
 {
     public partial class Login : Form
     {
+        DataBase database = new DataBase();
         Label lb1, lb2;
         TextBox textBox1, textBox2;
         public Login()
@@ -53,20 +54,31 @@ namespace kolmerakendust
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Using;Integrated Security=True;Pooling=False");
-            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Andmed Where nimi='" + textBox1.Text + "' and parol = '" + textBox2.Text + "'", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "1")
-            {
-                this.Hide();
 
-                StartMenu f2 = new StartMenu();
-                f2.Show();
+            var login = textBox1;
+            var password = textBox2;
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+
+            string addToDB = $"SELECT AndmedID, nimi, parol FROM Andmed WHERE nimi = '{login}' AND parol = '{password}'";
+
+            SqlCommand command = new SqlCommand(addToDB, database.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if(table.Rows.Count == 1)
+            {
+                MessageBox.Show("Sisse logitud", "Edukalt!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                StartMenu vf = new StartMenu();
+                this.Hide();
+                vf.ShowDialog();
+                this.Show();
             }
             else
             {
-                MessageBox.Show("Palun kontrolli sisestatud andmete õigsust!");
+                MessageBox.Show("Seda kontot pole!", "Seda kontot pole!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
