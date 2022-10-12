@@ -48,3 +48,28 @@ Kui sisestate valed andmed, neid pole andmebaasis, siis näete teadet "Palun kon
                 MessageBox.Show("Palun kontrolli sisestatud andmete õigsust!");
             }
 ```
+## Oma funktsioon, mis kontrollib juba olemasolevat kasutajat, kui on duplikaat, siis kontot ei looda, kui ei, siis luuakse.(kontrollib kas posti või login on duplikaat)
+```
+            var login = textBox1.Text;
+            var mail = textBox4.Text;
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+
+            string addToDB = $"SELECT AndmedID, nimi, email FROM Andmed WHERE nimi = '{login}' OR email = '{mail}'";
+
+            SqlCommand command = new SqlCommand(addToDB, dataBase.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if(table.Rows.Count > 0)
+            {
+                MessageBox.Show("Konto on juba olemas!");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+```
