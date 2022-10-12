@@ -1,6 +1,6 @@
 ﻿namespace kolmerakendust
 {
-    partial class StartMenu
+    partial class Recover
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // StartMenu
+            // MathMang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 550);
-            this.Name = "StartMenu";
+            this.Name = "MathMang";
             this.Text = "Form1";
             this.ResumeLayout(false);
 

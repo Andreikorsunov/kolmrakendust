@@ -34,11 +34,13 @@ namespace kolmerakendust
         {
             Register vf = new Register();
             vf.Show();
+            this.Hide();
         }
         private void Start_btn_2_Click(object sender, EventArgs e)
         {
             Login vf = new Login();
             vf.Show();
+            this.Hide();
         }
     }
 }
