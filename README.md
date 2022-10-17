@@ -3,14 +3,18 @@
 See on projekt, kus on kolm mängurakendust, millesse sisenemiseks tuleb esmalt registreeruda või sisse logida, kui sul kontol on juba olemas, andmebaasis peavad olema kasutajad ja nende mängude käigus saadud punktid.
 ## Mis on tehtud?
 Hetkel on kõik mängud tehtud ja töötavad korralikult, toimib ka autoriseerimine ja registreerimine andmebaasi abil.
+
+Parooli taastamine e-posti teel
 ## Mida on plaanis teha?
-Taastage e-posti teel, kui kasutaja sisestas e-posti õigesti ja logis kontolt sisse, saab ta sisestada uue parooli.
+Parooli taastamine e-posti teel, kus kui sisestate olemasoleva meili, kuvatakse selle konto parool
 
 Registreerimine koos andmete sisestamisega andmebaasi. 
 
 Edetabel, kus igalt üksikult kasutajalt võetakse punkte ja selgitatakse välja, kes saavutas kõige rohkem punkte.
 
 Tabel, kus kuvatakse kõik olemasolevad kontod ilma punktideta (loomulikult ilma paroolideta).
+
+Muutke kujundust veidi, et see parem välja näeks.
 ## Kuidas autoriseerimine töötab
 Sa valid seda nuppu "Logi sisse".
 
@@ -75,3 +79,16 @@ Kui sisestate valed andmed, neid pole andmebaasis, siis näete teadet "Palun kon
                 return false;
             }
 ```
+## Parooli taastamine
+Klõpsake nuppu "Unustan parooli"
+
+![pilt](https://user-images.githubusercontent.com/77333208/196116774-4cee78ef-4d6e-47e8-89f3-9b3f6a2a1fef.png)
+
+Avaneb aken, kus esimene tekstikast vastutab olemasoleva meili sisestamise eest ja teine ​​tekstikast on olemas parooli saamiseks.
+
+![pilt](https://user-images.githubusercontent.com/77333208/196116967-c7d601b7-4cc2-4db7-bf6a-86f39d8d0d81.png)
+
+Sisestan õige e-posti aadressi ja saan kontolt parooli (pärast nuppu Saada parool klõpsamist)
+
+![pilt](https://user-images.githubusercontent.com/77333208/196117155-c1988dc1-86f1-4670-948a-0ae34d648dcb.png)
+
