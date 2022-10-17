@@ -2,11 +2,13 @@
 ## Kirjeldus
 See on projekt, kus on kolm mängurakendust, millesse sisenemiseks tuleb esmalt registreeruda või sisse logida, kui sul kontol on juba olemas, andmebaasis peavad olema kasutajad ja nende mängude käigus saadud punktid.
 ## Mis on tehtud?
-Hetkel on kõik mängud tehtud ja töötavad korralikult, olemas on ka andmebaasi andmeid kasutav login.
+Hetkel on kõik mängud tehtud ja töötavad korralikult, toimib ka autoriseerimine ja registreerimine andmebaasi abil.
 ## Mida on plaanis teha?
 Taastage e-posti teel, kui kasutaja sisestas e-posti õigesti ja logis kontolt sisse, saab ta sisestada uue parooli.
 
-Registreerimine koos andmete sisestamisega andmebaasi. Edetabel, kus igalt üksikult kasutajalt võetakse punkte ja selgitatakse välja, kes saavutas kõige rohkem punkte.
+Registreerimine koos andmete sisestamisega andmebaasi. 
+
+Edetabel, kus igalt üksikult kasutajalt võetakse punkte ja selgitatakse välja, kes saavutas kõige rohkem punkte.
 
 Tabel, kus kuvatakse kõik olemasolevad kontod ilma punktideta (loomulikult ilma paroolideta).
 ## Kuidas autoriseerimine töötab
