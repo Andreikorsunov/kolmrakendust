@@ -17,17 +17,18 @@ namespace kolmerakendust
         {
             this.Text = "Login";
             this.Size = new Size(220, 270);
+
             lb1 = new Label
             {
                 Text = "Login",
                 Size = new System.Drawing.Size(40, 40),
-                Location = new System.Drawing.Point(10, 5)
+                Location = new System.Drawing.Point(10, 5),
             };
             lb2 = new Label
             {
                 Text = "Parool",
                 Size = new System.Drawing.Size(40, 40),
-                Location = new System.Drawing.Point(10, 55)
+                Location = new System.Drawing.Point(10, 55),
             };
             textBox1 = new TextBox
             {
