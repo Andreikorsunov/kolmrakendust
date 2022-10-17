@@ -87,7 +87,7 @@ namespace kolmerakendust
             {
                 MessageBox.Show("Sinu konto on loodud");
                 Login vf = new Login();
-                this.Hide();
+                this.Close();
                 vf.Show();
             }
             else
