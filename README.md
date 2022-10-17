@@ -15,6 +15,38 @@ Edetabel, kus igalt üksikult kasutajalt võetakse punkte ja selgitatakse välja
 Tabel, kus kuvatakse kõik olemasolevad kontod ilma punktideta (loomulikult ilma paroolideta).
 
 Muutke kujundust veidi, et see parem välja näeks.
+
+## Klass DataBase
+Klass, mida kasutatakse andmebaasiühendusena.
+```
+using System.Data.SqlClient;
+
+namespace kolmerakendust
+{
+    class DataBase
+    {
+        SqlConnection sqlConnection = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Using;Integrated Security=True");
+        public void openConnection()
+        {
+            if(sqlConnection.State == System.Data.ConnectionState.Closed)
+            {
+                sqlConnection.Open();
+            }
+        }
+        public void closeConnection()
+        {
+            if(sqlConnection.State == System.Data.ConnectionState.Open)
+            {
+                sqlConnection.Close();
+            }
+        }
+        public SqlConnection getConnection()
+        {
+            return sqlConnection;
+        }
+    }
+}
+```    
 ## Kuidas autoriseerimine töötab
 Sa valid seda nuppu "Logi sisse".
 
@@ -36,7 +68,7 @@ Kui sisestate valed andmed, neid pole andmebaasis, siis näete teadet "Palun kon
 ![pilt](https://user-images.githubusercontent.com/77333208/194815908-2c183523-6264-433e-b650-e51c2bb11c9f.png)
 
 
-## Kood
+## Kood (Login)
 ```
             SqlConnection con = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=users;Integrated Security=True;Pooling=False");
             SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From UserL Where name='" + textBox1.Text + "' and password = '" + textBox2.Text + "'", con);
@@ -92,3 +124,19 @@ Sisestan õige e-posti aadressi ja saan kontolt parooli (pärast nuppu Saada par
 
 ![pilt](https://user-images.githubusercontent.com/77333208/196117155-c1988dc1-86f1-4670-948a-0ae34d648dcb.png)
 
+## Kood, kuidas parooli taastamine töötab
+```
+            dataBase.openConnection();
+            SqlCommand cmd = new SqlCommand("SELECT email, parol FROM Andmed WHERE email = '"+tb1.Text+"'", dataBase.getConnection());
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                tb2.Text = dr[1].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Seda emaili pole olemas");
+                tb2.Text = "";
+            }
+            dataBase.closeConnection();
+```         
